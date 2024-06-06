@@ -1,3 +1,4 @@
+#include <iostream>
 #ifndef PARCIAL1L_H_INCLUDED
 #define PARCIAL1L_H_INCLUDED
 
@@ -63,4 +64,40 @@ public:
         fecha_nacimiento.Mostrar;
         fecha_ingreso.Mostrar;
     }
+};
+
+class Usuario{
+private:
+    int legajo;
+    char contrasenia[10];
+    int categoria;
+    bool estado;
+public:
+    void Cargar(){
+        cin>>legajo;
+        cargarCadena(contrasenia,10);
+        cin>>categoria;
+        estado=true;
+    }
+    
+    void Mostrar(){
+        cout<<legajo<<endl;
+        cout<<contraseña<<endl;
+        cout<<categoria<<endl;
+        cout<<estado<<endl;
+    } 
+
+// GET
+    int getLegajo(){return legajo;}
+    const char *getContrasenia(){return nombre;}
+    int getCategoria(){return categoria;}
+    bool getEstado(){return estado;}
+
+// SET
+    void setLegajo(int l){legajo=l;}
+    void setContrasenia(const char *c){strcpy(contrasenia, c);}
+    void setCategoria(int c){categoria=c}
+    void setEstado(bool e){estado=e;}
+
+
 };
