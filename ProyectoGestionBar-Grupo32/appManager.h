@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+
 /*************** clase usuario provisoria ***************************/
 class User{
 
@@ -31,18 +32,37 @@ private:
     void MenuAdmin();       //ok
     void MenuUser();        //ok
     void Venta();           //ok
-    void Historial();
-    void Config();          //ok
-    ///submenu:
-    void AltaProd();
-    void BajaProd();
-    void ModStock();
-    void ModPrecio();
+    void Historial();           //a medias
+
+    /************************************************/
+    void Config();              //ok
+
+    ///submenus:
+    /// - productos:
+    void MenuProductos();       //ok
+    void MostrarProductos();   //a medias
+    void AltaProd();           //ok
+    bool IngresoProdBebida();  //OK
+    bool IngresoProdComida();  //OK
+    void BajaProd();            //OK
+    void ModStock();            //OK
+    void ModPrecio();           //OK
+    /// - usuarios:
+    void MenuUsarios();         //OK
+    void BuscarUsuario();
+    void AltaUsuario();         //OK
+    void BajaUsuario();
+    /// - copia de seguridad
+    void MenuCopiaSeg();        //OK
     void GenerarBackup();
     void CargarBackup();
+    /************************************************/
+
 
     void Reportes();
     void TablaPrecios();    //ok
+
+    int strToInt(std::string);
 };
 
 
