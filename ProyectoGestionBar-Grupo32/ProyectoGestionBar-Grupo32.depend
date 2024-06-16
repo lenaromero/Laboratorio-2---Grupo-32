@@ -1,18 +1,20 @@
 # depslib dependency file v1.0
-1716679638 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\main.cpp
+1718565822 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\main.cpp
 	<iostream>
 	"appManager.h"
+	<cstring>
+	<cmath>
 
-1716680199 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.cpp
+1718563862 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.cpp
 	"Terminal.h"
 	<cstring>
 
-1716680199 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.h
+1718563861 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.h
 	"rlutil.h"
 	<windows.h>
 	<iostream>
 
-1715717238 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\rlutil.h
+1716681132 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -26,11 +28,25 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1716680454 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.cpp
+1718565957 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.cpp
 	"appManager.h"
+	"Terminal.h"
+	"menuOptions.h"
+	"cuadro.h"
 	<cstring>
+	<cmath>
+
+1718565955 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.h
+	<iostream>
+
+1717554371 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\menuoptions.h
+	<iostream>
+
+1718403635 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\cuadro.h
+	<iostream>
 	"Terminal.h"
 
-1716679735 c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.h
-	<iostream>
+1718403941 source:c:\users\bbarrera\documents\github\laboratorio-2---grupo-32\proyectogestionbar-grupo32\cuadro.cpp
+	"cuadro.h"
+	<cstring>
 
