@@ -2,9 +2,25 @@
 #include <cstring>
 
 void Terminal::mostrarTexto(std::string text, int x, int y){
-    rlutil::hidecursor();       //esconde el cursor
+    rlutil::hidecursor();
     rlutil::locate(x,y);
     std::cout<<text;
+}
+
+void Terminal::mostrarTexto(float numero, int x, int y){
+    rlutil::hidecursor();
+    rlutil::locate(x,y);
+    std::cout<<numero;
+}
+
+void Terminal::mostrarTexto(std::string text, int x, int y, bool resaltar){
+    if(resaltar)rlutil::setBackgroundColor(rlutil::COLOR::BLUE);
+
+    rlutil::hidecursor();
+    rlutil::locate(x,y);
+    std::cout<<text;
+
+    rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
 }
 
 std::string Terminal::ingresarTexto(int x, int y, bool cursorOn){
@@ -19,6 +35,18 @@ std::string Terminal::ingresarTexto(int x, int y, bool cursorOn){
     return text;
 }
 
+float Terminal::ingresarNumero(int x, int y, bool cursorOn){
+    float num = -1;
+
+    if(cursorOn) rlutil::CursorHider();
+    else rlutil::hidecursor();
+
+    rlutil::locate(x,y);
+    std::cin>>num;
+
+    return num;
+}
+
 void Terminal::pintarHorizontal(int x, int largo, int y){
     rlutil::locate(x,y);
 
@@ -27,22 +55,16 @@ void Terminal::pintarHorizontal(int x, int largo, int y){
     }
 }
 
-void Terminal::barraEspera(int time){
-
-    for(int i=0; i<7; i++){
-        rlutil::msleep(time);
-        std::cout<<". ";
-    }
-}
-
 void Terminal::barraEspera(int time, int x, int y){
     int aux = time/35;
-    rlutil::setBackgroundColor(rlutil::COLOR::CYAN);
 
+    dibujarRectanguloSimple(x-2,y-2,3,37);
+
+    rlutil::setBackgroundColor(rlutil::COLOR::CYAN);
 
     for(int i=0; i<35; i++){
         rlutil::msleep(time);
-        mostrarTexto(" ",x-8+i,y);
+        mostrarTexto(" ",x+i,y);
         time -= aux;
     }
 
@@ -76,6 +98,33 @@ void Terminal::dibujarRectangulo(int x, int y, int alto, int ancho){
 	}
 }
 
+void Terminal::dibujarRectanguloSimple(int x, int y, int alto, int ancho){
+    COORD coord;
+
+    for (int i = 0; i < alto; i++) {
+
+		for (int j = 0; j < ancho; j++) {
+
+            coord.X = x+j;
+            coord.Y = y+i;
+            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+
+			if (i == 0 && j == 0)std::cout << char(218);
+			if (i == 0 && j == ancho - 1)std::cout << char(191);
+
+			if (i == alto - 1 && j == 0)std::cout << char(192);
+			if (i == alto - 1 && j == ancho - 1)std::cout << char(217);
+
+			if ((j == 0 || j == ancho - 1) && i > 0 && i < alto - 1){
+                std::cout << char(179);
+            }
+			if ((i == 0 || i == alto - 1) && j > 0 && j < ancho - 1){
+				std::cout << char(196);
+			}
+		}
+	}
+}
+
 void Terminal::pintarRectangulo(int x, int y, int alto, int ancho){
 
     for(int i=y; i<=y+alto; i++){
@@ -100,7 +149,7 @@ void Terminal::crearBoton(std::string text, int x, int y, bool select){
 
     if(select)rlutil::setBackgroundColor(rlutil::COLOR::LIGHTBLUE);
 
-    dibujarRectangulo(x,y,3,26);
+    dibujarRectanguloSimple(x,y,3,26);
     pintarHorizontal(x+2,24,y+2);
     mostrarTexto(text,x_text,y+2);
 
@@ -110,7 +159,7 @@ void Terminal::crearBoton(std::string text, int x, int y, bool select){
 void Terminal::crearBotonVertical(std::string text, int x, int y, bool select){
     if(select)rlutil::setBackgroundColor(rlutil::COLOR::LIGHTBLUE);
 
-    dibujarRectangulo(x,y,5,5);
+    dibujarRectanguloSimple(x,y,5,5);
     pintarRectangulo(x+2,y+2,2,3);
     mostrarTexto(text,x+3,y+3);
 
@@ -139,4 +188,8 @@ void Terminal::crearFila(std::string text,rlutil::COLOR cTexto, int x, int y){
     rlutil::setColor(rlutil::COLOR::WHITE);
 }
 
-
+void Terminal::textBox(int x, int largo, int y, rlutil::COLOR cBack){
+    rlutil::setBackgroundColor(cBack);
+    pintarHorizontal(x,largo,y);
+    rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
+}

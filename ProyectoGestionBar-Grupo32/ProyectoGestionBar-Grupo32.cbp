@@ -37,7 +37,10 @@
 		<Unit filename="appManager.cpp" />
 		<Unit filename="appManager.h" />
 		<Unit filename="classPersona.h" />
+		<Unit filename="cuadro.cpp" />
+		<Unit filename="cuadro.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menuOptions.h" />
 		<Unit filename="rlutil.h" />
 		<Extensions />
 	</Project>
