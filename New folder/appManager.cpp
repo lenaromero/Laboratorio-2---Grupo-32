@@ -938,9 +938,6 @@ void AppManager::AltaUsuario(){
     anioNac = terminal.ingresarTexto(posx+35,posy+12,true);
     pass = terminal.ingresarTexto(posx+35,posy+14,true);
 
-    // Guardar el usuario en el archivo
-    nuevoUsuario.guardarEnArchivo();
-
     SELECT = OPC::OPCION1;
 
     while(status){

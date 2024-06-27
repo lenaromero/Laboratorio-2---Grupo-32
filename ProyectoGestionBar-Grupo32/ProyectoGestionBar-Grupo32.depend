@@ -50,3 +50,53 @@
 	"cuadro.h"
 	<cstring>
 
+1719442446 source:c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.cpp
+	"appManager.h"
+	"Terminal.h"
+	"menuOptions.h"
+	"cuadro.h"
+	<cstring>
+	<cmath>
+
+1719442446 c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\appmanager.h
+	<iostream>
+
+1719442446 c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.h
+	"rlutil.h"
+	<windows.h>
+	<iostream>
+
+1719442446 c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1719442446 c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\menuoptions.h
+	<iostream>
+
+1719442446 c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\cuadro.h
+	<iostream>
+	"Terminal.h"
+
+1719442446 source:c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\cuadro.cpp
+	"cuadro.h"
+	<cstring>
+
+1719442446 source:c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\main.cpp
+	<iostream>
+	"appManager.h"
+	<cstring>
+
+1719442446 source:c:\users\malena.romero\onedrive - neoris\documentos\laboratorio-2---grupo-32\proyectogestionbar-grupo32\terminal.cpp
+	"Terminal.h"
+	<cstring>
+
